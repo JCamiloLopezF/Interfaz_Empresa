@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -26,13 +27,34 @@ public class App extends Application {
 
         //Crea la barra de menú
         MenuBar barraDeMenu = new MenuBar();
+        //Crear items dentro de las opciones que aparecen en la barra de menú
         Menu gestionarEmpleadosItem = new Menu("Gestionar Empleados");
+        MenuItem anadirEmpleado = new MenuItem("Añadir Empleado");
+        MenuItem consultarEmpleado = new MenuItem("Consultar Empleado");
+        MenuItem eliminarEmpleado = new MenuItem("Eliminar Empleado");
+
         Menu gestionarProductosItem = new Menu("Gestionar Productos");
+        MenuItem agregarObjeto = new MenuItem ("Agregar Objeto");
+        MenuItem eliminarObjeto = new MenuItem("Eliminar Objeto");
+        MenuItem mostrarObjetos = new MenuItem("Mostrar Objetos");
+
         Menu gestionarClientesItem = new Menu("Gestionar Clientes");
+        MenuItem anadirCliente = new MenuItem("Añadir Cliente");
+        MenuItem consultarCliente = new MenuItem("Consultar Cliente");
+        MenuItem eliminarCliente = new MenuItem("Eliminar Cliente");
+
         Menu gestionarPrestamosItem = new Menu("Gestionar Préstamos");
+        MenuItem realizarPrestamo = new MenuItem("Realizar Préstamo");
+        MenuItem consultarPrestamos = new MenuItem("Consultar Préstamos");
+
+
+        gestionarEmpleadosItem.getItems().addAll(anadirEmpleado, consultarEmpleado, eliminarEmpleado);
         barraDeMenu.getMenus().add(gestionarEmpleadosItem);
         barraDeMenu.getMenus().add(gestionarPrestamosItem);
+        gestionarProductosItem.getItems().addAll(agregarObjeto, eliminarObjeto, mostrarObjetos);
+        gestionarPrestamosItem.getItems().addAll(realizarPrestamo, consultarPrestamos);
         barraDeMenu.getMenus().add(gestionarProductosItem);
+        gestionarClientesItem.getItems().addAll(anadirCliente, consultarCliente, eliminarCliente);
         barraDeMenu.getMenus().add(gestionarClientesItem);
 
 
@@ -41,6 +63,63 @@ public class App extends Application {
         gestionarPrestamosItem.setStyle("-fx-font-family: 'Branding'");
         gestionarProductosItem.setStyle("-fx-font-family: 'Branding'");
         gestionarClientesItem.setStyle("-fx-font-family: 'Branding'");
+
+        //Inicializar la ventana si se presiona el botón que direcciona a ella:
+        anadirEmpleado.setOnAction(event -> {
+            // Crear y mostrar la ventana de "Agregar Empleados"
+            AgregarEmpleado anadirEmpleadoWindow = new AgregarEmpleado();
+            anadirEmpleadoWindow.start(welcomeUiStage);
+        });
+
+        consultarEmpleado.setOnAction(event -> {
+            ConsultarEmpleado consultarEmpleadoWindow = new ConsultarEmpleado();
+            consultarEmpleadoWindow.start(welcomeUiStage);
+        });
+
+        eliminarEmpleado.setOnAction(event -> {
+            EliminarEmpleado eliminarEmpleadoWindow = new EliminarEmpleado();
+            eliminarEmpleadoWindow.start(welcomeUiStage);
+        });
+
+        realizarPrestamo.setOnAction(event ->{
+            RealizarPrestamo realizarPrestamoWindow = new RealizarPrestamo();
+            realizarPrestamoWindow.start(welcomeUiStage);
+        });
+
+        consultarPrestamos.setOnAction(event ->{
+            ConsultarPrestamos consultarPrestamosWindow = new ConsultarPrestamos();
+            consultarPrestamosWindow.start(welcomeUiStage);
+        });
+
+        agregarObjeto.setOnAction(event ->{
+            AgregarObjeto agregarObjetoWindow = new AgregarObjeto();
+            agregarObjetoWindow.start(welcomeUiStage);
+        });
+        eliminarObjeto.setOnAction(event->{
+            EliminarObjeto eliminarObjetoWindow = new EliminarObjeto();
+            eliminarObjetoWindow.start(welcomeUiStage);
+        });
+
+        mostrarObjetos.setOnAction(event->{
+            ConsultarObjetos consultarObjetosWindow = new ConsultarObjetos();
+            consultarObjetosWindow.start(welcomeUiStage);
+        });
+
+        anadirCliente.setOnAction(event ->{
+            AgregarCliente agregarClienteWindow = new AgregarCliente();
+            agregarClienteWindow.start(welcomeUiStage);
+        });
+
+        consultarCliente.setOnAction(event->{
+            ConsultarCliente consultarClienteWindow = new ConsultarCliente();
+            consultarClienteWindow.start(welcomeUiStage);
+        });
+
+        eliminarCliente.setOnAction(event->{
+            EliminarCliente eliminarClienteWindow = new EliminarCliente();
+            eliminarClienteWindow.start(welcomeUiStage);
+        });
+
 
         // Cambiar el color de la barra de menú
         barraDeMenu.setStyle("-fx-background-color: #9999CC;");
