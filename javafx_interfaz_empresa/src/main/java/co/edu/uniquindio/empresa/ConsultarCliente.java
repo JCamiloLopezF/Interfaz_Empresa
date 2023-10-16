@@ -2,9 +2,7 @@ package co.edu.uniquindio.empresa;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -20,22 +18,15 @@ public class ConsultarCliente extends Application {
         BackgroundFill backgroundFill = new BackgroundFill(Color.web("#CCCCFF"), null, null);
         Background background = new Background(backgroundFill);
         raiz.setBackground(background);
-        
-        MenuBar barraMenu = new MenuBar();
-        Menu utilidades = new Menu("Utilidades");
-        MenuItem devolverse = new MenuItem("Atrás");
-        utilidades.getItems().addAll(devolverse);
-        barraMenu.getMenus().add(utilidades);
 
-        barraMenu.setStyle("-fx-background-color: #9999CC;");
+        Button volver = new Button("<--");
+        volver.setMaxWidth(40);
+        raiz.setTop(volver);
 
-        raiz.setTop(barraMenu);
-
-        devolverse.setOnAction(event -> {
+        volver.setOnAction(event -> {
             App welcomeUiStage = new App();
             welcomeUiStage.start(consultarClienteWindow);
         });
-
 
         Scene scene = new Scene(raiz, 1920, 1080);
 

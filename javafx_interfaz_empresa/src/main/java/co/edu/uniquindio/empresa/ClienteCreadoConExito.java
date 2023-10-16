@@ -2,6 +2,7 @@ package co.edu.uniquindio.empresa;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -22,7 +23,16 @@ public class ClienteCreadoConExito extends Application {
 
         Label clienteCreadoConExitoLabel = new Label("El cliente fue agregado exitosamente");
 
+        Button volver = new Button("<--");
+        volver.setMaxWidth(40);
+
+        volver.setOnAction(event ->{
+            AgregarCliente agregarClienteWindow = new AgregarCliente();
+            agregarClienteWindow.start(clienteCreadoConExitoWindow);
+        });
+
         raiz.setCenter(clienteCreadoConExitoLabel);
+        raiz.setTop(volver);
 
         Scene scene = new Scene(raiz, 1920, 1080);
 
