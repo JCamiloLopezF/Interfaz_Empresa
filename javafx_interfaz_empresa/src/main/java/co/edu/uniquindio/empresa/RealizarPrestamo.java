@@ -29,7 +29,7 @@ public class RealizarPrestamo extends Application {
         });
 
 
-        Scene scene = new Scene(raiz, 1920, 1080);
+        Scene scene = new Scene(raiz, 1920, 780);
 
         realizarPrestamoWindow.setScene(scene);
         realizarPrestamoWindow.setTitle("Gestionar Préstamo(s): Realizar Préstamo(s)");
