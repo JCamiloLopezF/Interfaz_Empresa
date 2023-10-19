@@ -3,6 +3,8 @@ package co.edu.uniquindio.empresa;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -76,10 +78,34 @@ public class AgregarCliente extends Application {
         crearRecuadroPequeñoPane.getChildren().addAll(contenedorVBoxNombreCliente, etiquetaNombreCliente,contenedorVBoxCodigoCliente, etiquetaCodigoCliente, selectorDocumentoID, etiquetaSelectorDocumentoID, selectorGenero, etiquetaSelectorGenero, contenedorVboxDireccionResidencia,etiquetaDireccionResidencia, agregarClienteButton);
         crearRecuadroPequeñoPane.setMaxWidth(250);
         //Si se presiona el bóton y el registro es correcto, pasará a la ventana que muestra que el cliente fue creado con éxito
-        agregarClienteButton.setOnAction(event->{
-            ClienteCreadoConExito clienteCreadoConExitoWindow = new ClienteCreadoConExito();
-            clienteCreadoConExitoWindow.start(anadirClienteWindow);
+        agregarClienteButton.setOnAction(event -> {
+            // Variables para rastrear el resultado de la validación
+            boolean nombreValido = !nombreCliente.getText().isEmpty();
+            boolean codigoValido = !codigoCliente.getText().isEmpty();
+            boolean direccionValida = !direccionResidencia.getText().isEmpty();
+        
+            // Usar un switch para manejar diferentes escenarios
+            switch (evaluarCampos(nombreValido, codigoValido, direccionValida)) {
+                case "ÉXITO":
+                    // Todos los campos están llenos y son válidos, pasar a la ventana de éxito
+                    ClienteCreadoConExito clienteCreadoConExitoWindow = new ClienteCreadoConExito();
+                    clienteCreadoConExitoWindow.start(anadirClienteWindow);
+                    break;
+                case "ERROR_NOMBRE":
+                    // Mostrar advertencia para el campo de nombre
+                    mostrarAdvertencia("¡Campo obligatorio!", "Ingrese un nombre válido");
+                    break;
+                case "ERROR_CÓDIGO":
+                    // Mostrar advertencia para el campo de código
+                    mostrarAdvertencia("¡Campo obligatorio!", "Ingrese un código válido");
+                    break;
+                case "ERROR_DIRECCIÓN":
+                    // Mostrar advertencia para el campo de dirección
+                    mostrarAdvertencia("¡Campo obligatorio!", "Ingrese una dirección válida");
+                    break;
+            }
         });
+        
 
         raiz.setCenter(crearRecuadroPequeñoPane);
 
@@ -94,10 +120,36 @@ public class AgregarCliente extends Application {
         raiz.setTop(volver);
 
 
-        Scene scene = new Scene(raiz, 1920, 1080);
+        Scene scene = new Scene(raiz, 1920, 780);
 
         anadirClienteWindow.setScene(scene);
         anadirClienteWindow.setTitle("Gestionar Clientes: Agregar Cliente");
         anadirClienteWindow.show();
     }
-}
+    //Funcion para mostar una advertencia cuándo un campo no se llena
+    private void mostrarAdvertencia(String titulo, String mensaje) {
+        Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+    //Sirve para evaluar que cada campo esté lleno y si no es así lanza un error en pantalla
+    private String evaluarCampos(boolean nombreValido, boolean codigoValido, boolean direccionValida){
+        if (nombreValido && codigoValido && direccionValida){
+            return "ÉXITO";}// Todos los campos llenos
+        else if (!nombreValido){
+            return "ERROR_NOMBRE";}//Nombre vacío
+        else if (!codigoValido){
+            return "ERROR_CÓDIGO";}//Código vacío
+        else if (!direccionValida){
+            return "ERROR_DIRECCIÓN";}//Dirección vacía
+
+        return "ERROR ERUJ-43897";//Para cubrir otros tipos de errores no contemplados en los else if 
+        }
+
+        }
+
+
+
+

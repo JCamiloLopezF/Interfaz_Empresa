@@ -10,10 +10,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ClienteCreadoConExito extends Application {
+public class ProductoEliminadoConExito extends Application {
 
     @Override
-    public void start(Stage clienteCreadoConExitoWindow){
+    public void start(Stage productoEliminadoConExitoWindow){
 
         BorderPane raiz = new BorderPane();
         
@@ -21,24 +21,24 @@ public class ClienteCreadoConExito extends Application {
         Background background = new Background(backgroundFill);
         raiz.setBackground(background);
 
-        Label clienteCreadoConExitoLabel = new Label("El cliente fue agregado exitosamente");
+        Label productoEliminadoConExitoLabel = new Label("El producto fue eliminado exitosamente");
 
         Button volver = new Button("<--");
         volver.setMaxWidth(40);
 
         volver.setOnAction(event ->{
             AgregarCliente agregarClienteWindow = new AgregarCliente();
-            agregarClienteWindow.start(clienteCreadoConExitoWindow);
+            agregarClienteWindow.start(productoEliminadoConExitoWindow);
         });
 
-        raiz.setCenter(clienteCreadoConExitoLabel);
+        raiz.setCenter(productoEliminadoConExitoLabel);
         raiz.setTop(volver);
 
         Scene scene = new Scene(raiz, 1920, 780);
 
-        clienteCreadoConExitoWindow.setScene(scene);
-        clienteCreadoConExitoWindow.setTitle("Gestionar Clientes: Agregar Cliente");
-        clienteCreadoConExitoWindow.show();
+        productoEliminadoConExitoWindow.setScene(scene);
+        productoEliminadoConExitoWindow.setTitle("Gestionar Clientes: Agregar Cliente");
+        productoEliminadoConExitoWindow.show();
     }
 
 }

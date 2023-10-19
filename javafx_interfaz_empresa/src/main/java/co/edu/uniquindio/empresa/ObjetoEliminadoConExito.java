@@ -10,10 +10,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ClienteCreadoConExito extends Application {
+public class ObjetoEliminadoConExito extends Application {
 
     @Override
-    public void start(Stage clienteCreadoConExitoWindow){
+    public void start(Stage objetoEliminadoConExitoWindow){
 
         BorderPane raiz = new BorderPane();
         
@@ -21,24 +21,24 @@ public class ClienteCreadoConExito extends Application {
         Background background = new Background(backgroundFill);
         raiz.setBackground(background);
 
-        Label clienteCreadoConExitoLabel = new Label("El cliente fue agregado exitosamente");
+        Label objetoEliminadoConExitoLabel = new Label("El objeto fue eliminado exitosamente");
 
         Button volver = new Button("<--");
         volver.setMaxWidth(40);
 
         volver.setOnAction(event ->{
-            AgregarCliente agregarClienteWindow = new AgregarCliente();
-            agregarClienteWindow.start(clienteCreadoConExitoWindow);
+            EliminarObjeto eliminarObjetoWindow = new EliminarObjeto();
+            eliminarObjetoWindow.start(objetoEliminadoConExitoWindow);
         });
 
-        raiz.setCenter(clienteCreadoConExitoLabel);
+        raiz.setCenter(objetoEliminadoConExitoLabel);
         raiz.setTop(volver);
 
         Scene scene = new Scene(raiz, 1920, 780);
 
-        clienteCreadoConExitoWindow.setScene(scene);
-        clienteCreadoConExitoWindow.setTitle("Gestionar Clientes: Agregar Cliente");
-        clienteCreadoConExitoWindow.show();
+        objetoEliminadoConExitoWindow.setScene(scene);
+        objetoEliminadoConExitoWindow.setTitle("Gestionar Clientes: Agregar Cliente");
+        objetoEliminadoConExitoWindow.show();
     }
 
 }

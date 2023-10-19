@@ -3,9 +3,6 @@ package co.edu.uniquindio.empresa;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -32,7 +29,7 @@ public class ConsultarObjetos extends Application {
         });
 
 
-        Scene scene = new Scene(raiz, 1920, 1080);
+        Scene scene = new Scene(raiz, 1920, 780);
 
         consultarObjetosWindow.setScene(scene);
         consultarObjetosWindow.setTitle("Gestionar Productos: Consultar Objetos");

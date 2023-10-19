@@ -28,7 +28,7 @@ public class EliminarCliente extends Application {
         });
 
 
-        Scene scene = new Scene(raiz, 1920, 1080);
+        Scene scene = new Scene(raiz, 1920, 780);
 
         eliminarClienteWindow.setScene(scene);
         eliminarClienteWindow.setTitle("Gestionar Clientes: Eliminar Cliente");

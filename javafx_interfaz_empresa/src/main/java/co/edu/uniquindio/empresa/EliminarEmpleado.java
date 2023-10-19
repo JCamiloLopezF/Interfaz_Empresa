@@ -29,7 +29,7 @@ public class EliminarEmpleado extends Application {
         });
 
 
-        Scene scene = new Scene(raiz, 1920, 1080);
+        Scene scene = new Scene(raiz, 1920, 780);
 
         eliminarEmpleadoWindow.setScene(scene);
         eliminarEmpleadoWindow.setTitle("Gestionar Empleados: Eliminar Empleado");

@@ -23,7 +23,7 @@ public class App extends Application {
         Background background = new Background(backgroundFill);
         raiz.setBackground(background);
 
-        Scene scene = new Scene(raiz, 1920, 1080);
+        Scene scene = new Scene(raiz, 1920, 780);
 
         //Crea la barra de menú
         MenuBar barraDeMenu = new MenuBar();

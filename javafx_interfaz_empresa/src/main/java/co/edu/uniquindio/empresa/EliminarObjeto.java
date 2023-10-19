@@ -94,7 +94,7 @@ public class EliminarObjeto extends Application {
         raiz.setTop(volver);
 
 
-        Scene scene = new Scene(raiz, 1920, 1080);
+        Scene scene = new Scene(raiz, 1920, 780);
 
         eliminarObjetoWindow.setScene(scene);
         eliminarObjetoWindow.setTitle("Gestionar Producto: Eliminar Objeto");

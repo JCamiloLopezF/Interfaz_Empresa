@@ -28,7 +28,7 @@ public class ConsultarCliente extends Application {
             welcomeUiStage.start(consultarClienteWindow);
         });
 
-        Scene scene = new Scene(raiz, 1920, 1080);
+        Scene scene = new Scene(raiz, 1920, 780);
 
         consultarClienteWindow.setScene(scene);
         consultarClienteWindow.setTitle("Gestionar Clientes: Consultar Cliente");
