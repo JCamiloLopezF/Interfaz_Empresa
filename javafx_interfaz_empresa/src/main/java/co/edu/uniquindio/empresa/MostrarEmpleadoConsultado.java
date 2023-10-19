@@ -17,7 +17,8 @@ public class MostrarEmpleadoConsultado extends Application {
         Background background = new Background(backgroundFill);
         raiz.setBackground(background);
 
-        Label mostrarEmpleadoConsultado = new Label("El empleado que buscó es: ");
+        Label mostrarEmpleadoConsultado = new Label("El empleado que buscó es: ");// añadir el empleado
         mostrarEmpleadoConsultado.setTranslateY(-200);
+        
     }
 }

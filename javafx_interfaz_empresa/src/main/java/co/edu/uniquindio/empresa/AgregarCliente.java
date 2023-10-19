@@ -13,7 +13,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -31,12 +30,15 @@ public class AgregarCliente extends Application {
         TextField nombreCliente = new TextField();
         //Se le coloca una marca de agua al campo donde se ingresa el texto
         nombreCliente.setPromptText("Ingrese el nombre del cliente");
+        nombreCliente.setTranslateY(-150);
 
         TextField codigoCliente = new TextField();
         codigoCliente.setPromptText("Ingrese el código del cliente");
+        codigoCliente.setTranslateY(-65);
 
         TextField direccionResidencia = new TextField();
         direccionResidencia.setPromptText("Ingrese la dirección de residencia");
+        direccionResidencia.setTranslateY(85);
         //Crear un texto o etiqueta, en este caso se pone encima del TextField nombreCliente
         Label etiquetaNombreCliente = new Label("Nombre del cliente");
         etiquetaNombreCliente.setTranslateY(-200);
@@ -47,17 +49,7 @@ public class AgregarCliente extends Application {
         Label etiquetaDireccionResidencia = new Label("Dirección de residencia");
         etiquetaDireccionResidencia.setTranslateY(50);
         //Contenedor para poder trasladar más cómodamente el nombreCliente
-        VBox contenedorVBoxNombreCliente = new VBox();
-        contenedorVBoxNombreCliente.getChildren().addAll(nombreCliente);
-        contenedorVBoxNombreCliente.setTranslateY(200);
 
-        VBox contenedorVBoxCodigoCliente = new VBox();
-        contenedorVBoxCodigoCliente.getChildren().addAll(codigoCliente);
-        contenedorVBoxCodigoCliente.setTranslateY(300);
-
-        VBox contenedorVboxDireccionResidencia = new VBox();
-        contenedorVboxDireccionResidencia.getChildren().addAll(direccionResidencia);
-        contenedorVboxDireccionResidencia.setTranslateY(450);
         //Crear un selector para que el usuario elija el tipo de documento
         ChoiceBox<String> selectorDocumentoID = new ChoiceBox<>(FXCollections.observableArrayList("Cédula", "Pasaporte", "Cédula de Extranjería"));
         selectorDocumentoID.setTranslateY(-250);
@@ -75,7 +67,7 @@ public class AgregarCliente extends Application {
         agregarClienteButton.setTranslateY(150);
         //Dentro de este Pane se agrega todo para poder acomodar toda la escena, o en pocas palabras modificar el tamaño y posición de todos los elementos conjuntos
         StackPane crearRecuadroPequeñoPane = new StackPane();
-        crearRecuadroPequeñoPane.getChildren().addAll(contenedorVBoxNombreCliente, etiquetaNombreCliente,contenedorVBoxCodigoCliente, etiquetaCodigoCliente, selectorDocumentoID, etiquetaSelectorDocumentoID, selectorGenero, etiquetaSelectorGenero, contenedorVboxDireccionResidencia,etiquetaDireccionResidencia, agregarClienteButton);
+        crearRecuadroPequeñoPane.getChildren().addAll(nombreCliente, etiquetaNombreCliente,codigoCliente, etiquetaCodigoCliente, selectorDocumentoID, etiquetaSelectorDocumentoID, selectorGenero, etiquetaSelectorGenero, direccionResidencia, etiquetaDireccionResidencia, agregarClienteButton);
         crearRecuadroPequeñoPane.setMaxWidth(250);
         //Si se presiona el bóton y el registro es correcto, pasará a la ventana que muestra que el cliente fue creado con éxito
         agregarClienteButton.setOnAction(event -> {

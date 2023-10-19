@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -17,6 +19,16 @@ public class App extends Application {
     public void start(Stage welcomeUiStage) { //Crear la ventana
         // Crear el contenedor o la raíz de toda la ventana
         BorderPane raiz = new BorderPane();
+
+        //Añadir una imagen:
+        Image imagen = new Image("file:/Users/macbook/Desktop/Camilo/Ai_interfaz_empresa/Logo.png");
+        //Mostrar la imagen:
+        ImageView imagenView = new ImageView(imagen);
+        imagenView.setFitWidth(240);
+        imagenView.setFitHeight(140);
+        raiz.setCenter(imagenView);
+        imagenView.setTranslateX(-510);
+        imagenView.setTranslateY(-295);
 
         // Crear el fondo
         BackgroundFill backgroundFill = new BackgroundFill(Color.web("#CCCCFF"), null, null);

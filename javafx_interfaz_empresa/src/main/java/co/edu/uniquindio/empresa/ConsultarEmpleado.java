@@ -32,7 +32,7 @@ public class ConsultarEmpleado extends Application {
         contenedorVBoxCodigoEmpleado.getChildren().addAll(codigoEmpleado);
         contenedorVBoxCodigoEmpleado.setTranslateY(-200);
 
-        Button consultarEmpleado = new Button("Consultar Empleado");
+        Button consultarEmpleado = new Button("Buscar");
 
         consultarEmpleado.setOnAction(event ->{
             MostrarEmpleadoConsultado mostrarEmpleadoWindow = new MostrarEmpleadoConsultado();
