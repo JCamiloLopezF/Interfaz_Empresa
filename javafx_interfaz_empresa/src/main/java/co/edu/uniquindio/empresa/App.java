@@ -21,7 +21,7 @@ public class App extends Application {
         BorderPane raiz = new BorderPane();
 
         //Añadir una imagen:
-        Image imagen = new Image("file:/Users/macbook/Desktop/Camilo/Ai_interfaz_empresa/Logo.png");
+        Image imagen = new Image("file:/Users/macbook/Desktop/Camilo/Repositorios/Interfaz_Empresa/Interfaz_Empresa/javafx_interfaz_empresa/Imágenes/Logo.png");
         //Mostrar la imagen:
         ImageView imagenView = new ImageView(imagen);
         imagenView.setFitWidth(240);
