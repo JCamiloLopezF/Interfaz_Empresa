@@ -37,6 +37,22 @@ public class AgregarEmpleado extends Application {
         TextField experienciaEmpleado = new TextField();
         experienciaEmpleado.setPromptText("Ingrese los años de experiencia");
 
+        Label etiquetaNombreEmpleado = new Label("Nombre del Empleado");
+        etiquetaNombreEmpleado.setTextFill(Color.BLACK); // Establecer el color del texto
+        etiquetaNombreEmpleado.setTranslateY(5);
+
+        Label etiquetaCodigoEmpleado = new Label("Código del Empleado");
+        etiquetaCodigoEmpleado.setTextFill(Color.BLACK); // Establecer el color del texto
+        etiquetaCodigoEmpleado.setTranslateY(5);
+
+        Label etiquetaEmailEmpleado = new Label("Email del Empleado");
+        etiquetaEmailEmpleado.setTextFill(Color.BLACK); // Establecer el color del texto
+        etiquetaEmailEmpleado.setTranslateY(5);
+
+        Label etiquetaExperienciaEmpleado = new Label("Años de Experiencia");
+        etiquetaExperienciaEmpleado.setTextFill(Color.BLACK); // Establecer el color del texto
+        etiquetaExperienciaEmpleado.setTranslateY(5);
+
         Button agregarEmpleadoButton = new Button("Agregar Empleado");
 
         Label mensajeError = new Label();
@@ -76,18 +92,18 @@ public class AgregarEmpleado extends Application {
             }
         });
 
-        contenedor.getChildren().addAll(nombreEmpleado, codigoEmpleado, emailEmpleado, experienciaEmpleado, agregarEmpleadoButton, mensajeError);
+        contenedor.getChildren().addAll(etiquetaNombreEmpleado, nombreEmpleado, etiquetaCodigoEmpleado, codigoEmpleado, etiquetaEmailEmpleado, emailEmpleado, etiquetaExperienciaEmpleado, experienciaEmpleado, agregarEmpleadoButton, mensajeError);
 
         StackPane recuadroPequenoCentrado = new StackPane();
         recuadroPequenoCentrado.getChildren().addAll(contenedor);
-        recuadroPequenoCentrado.setMaxWidth(350);
+        recuadroPequenoCentrado.setMaxWidth(300);
 
         raiz.setCenter(recuadroPequenoCentrado);
 
         Button volver = new Button("<--");
         volver.setMaxWidth(40);
 
-        volver.setOnAction(event ->{
+        volver.setOnAction(event -> {
             App welcomeUi = new App();
             welcomeUi.start(anadirEmpleadoWindow);
         });
@@ -105,3 +121,4 @@ public class AgregarEmpleado extends Application {
         launch(args);
     }
 }
+

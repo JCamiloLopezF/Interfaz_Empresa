@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -27,8 +28,11 @@ public class ConsultarCliente extends Application {
         volver.setMaxWidth(40);
         raiz.setTop(volver);
 
+        Label numeroDeDocumentoClienteLabel = new Label("Ingrese el número de documento del cliente");
+        numeroDeDocumentoClienteLabel.setTranslateY(-90);
         TextField numeroDeDocumentoCliente = new TextField();
         numeroDeDocumentoCliente.setPromptText("Ingrese el número de documento del ciente");
+        numeroDeDocumentoCliente.setTranslateY(-50);
 
         Button buscar = new Button("Buscar");
 
@@ -45,8 +49,8 @@ public class ConsultarCliente extends Application {
         });
 
         StackPane contenedorStackPane = new StackPane();
-        contenedorStackPane.getChildren().addAll(numeroDeDocumentoCliente, buscar);
-        contenedorStackPane.setMaxWidth(250);
+        contenedorStackPane.getChildren().addAll(numeroDeDocumentoCliente, buscar, numeroDeDocumentoClienteLabel);
+        contenedorStackPane.setMaxWidth(270);
 
         raiz.setCenter(contenedorStackPane);
 

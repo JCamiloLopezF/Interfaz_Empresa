@@ -34,8 +34,7 @@ public class EliminarObjeto extends Application {
         TextField cantidadStock = new TextField();
         //Se le coloca una marca de agua al campo donde se ingresa el texto
         cantidadStock.setPromptText("Ingrese la cantidad con la que dispone");
-        
-        
+            
         //Crear un texto o etiqueta, en este caso se pone encima del TextField nombreObjeto
         Label etiquetaNombreProducto = new Label("Nombre del Objeto");
         etiquetaNombreProducto.setTranslateY(-200);
@@ -97,7 +96,7 @@ public class EliminarObjeto extends Application {
         Scene scene = new Scene(raiz, 1920, 780);
 
         eliminarObjetoWindow.setScene(scene);
-        eliminarObjetoWindow.setTitle("Gestionar Producto: Eliminar Objeto");
+        eliminarObjetoWindow.setTitle("Gestionar Producto: Eliminar producto");
         eliminarObjetoWindow.show();
     }
     
