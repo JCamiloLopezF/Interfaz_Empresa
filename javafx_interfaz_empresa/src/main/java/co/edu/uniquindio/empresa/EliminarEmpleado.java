@@ -1,7 +1,5 @@
 package co.edu.uniquindio.empresa;
 
-import java.text.Normalizer;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -62,7 +60,7 @@ public class EliminarEmpleado extends Application {
                 empleadoEliminadoConExitoWindow.start(eliminarEmpleadoWindow);
                 break;
                 case "ERROR_NOMBRE":
-                    mostrarAdvertencia("¡Ingrese un nombre válido!", "El nombre no es válido, ingrese otro valor");
+                    mostrarAdvertencia("¡Ingrese un nombre válido!", "El nombre no es válido, ingrese un valor");
                 break;
                 case "ERROR_CÓDIGO":
                     mostrarAdvertencia("¡Ingrese un código válido!", "El código no es válido, ingrese otro valor");

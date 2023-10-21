@@ -13,7 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
+//Im eating, por si las moscas :D;
 public class EliminarCliente extends Application {
 
     @Override

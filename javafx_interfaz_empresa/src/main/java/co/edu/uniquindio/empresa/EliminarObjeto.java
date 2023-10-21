@@ -28,18 +28,18 @@ public class EliminarObjeto extends Application {
         //Se crea un campo donde se puede ingresar texto
         TextField nombreObjeto = new TextField();
         //Se le coloca una marca de agua al campo donde se ingresa el texto
-        nombreObjeto.setPromptText("Ingrese el nombre del producto");
+        nombreObjeto.setPromptText("Ingrese el ID del objeto");
 
          //Se crea un campo donde se puede ingresar texto
         TextField cantidadStock = new TextField();
         //Se le coloca una marca de agua al campo donde se ingresa el texto
-        cantidadStock.setPromptText("Ingrese la cantidad con la que dispone");
+        cantidadStock.setPromptText("Ingrese la cantidad de unidades a eliminar");
             
         //Crear un texto o etiqueta, en este caso se pone encima del TextField nombreObjeto
-        Label etiquetaNombreProducto = new Label("Nombre del Objeto");
+        Label etiquetaNombreProducto = new Label("ID del Objeto");
         etiquetaNombreProducto.setTranslateY(-200);
 
-        Label etiquetaCantidadStock = new Label("Unidades disponibles");
+        Label etiquetaCantidadStock = new Label("Unidades que desea eliminar");
         etiquetaCantidadStock .setTranslateY(-100);
 
         //Contenedor para poder trasladar más cómodamente el nombreObjeto
@@ -49,7 +49,7 @@ public class EliminarObjeto extends Application {
 
         VBox contenedorVBoxCantidadStock = new VBox();
         contenedorVBoxCantidadStock.getChildren().addAll(cantidadStock);
-        contenedorVBoxCantidadStock.setTranslateY(200);
+        contenedorVBoxCantidadStock.setTranslateY(300);
 
         Button eliminarProductoButton = new Button("Eliminar Producto");
         eliminarProductoButton.setTranslateY(150);
