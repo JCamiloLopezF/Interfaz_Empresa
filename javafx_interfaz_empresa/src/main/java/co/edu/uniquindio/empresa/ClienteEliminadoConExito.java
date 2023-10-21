@@ -23,16 +23,16 @@ public class ClienteEliminadoConExito extends Application {
 
         Label clienteEliminadoConExitoLabel = new Label("El cliente fue eliminado exitosamente");
 
-        Button volver = new Button("<--");
-        volver.setMaxWidth(40);
-
-        volver.setOnAction(event ->{
-            EliminarCliente eliminarClienteWindow = new EliminarCliente();
-            eliminarClienteWindow.start(clienteEliminadoConExitoWindow);
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(clienteEliminadoConExitoWindow);
         });
 
-        raiz.setCenter(clienteEliminadoConExitoLabel);
         raiz.setTop(volver);
+
+        raiz.setCenter(clienteEliminadoConExitoLabel);
 
         Scene scene = new Scene(raiz, 1920, 780);
 

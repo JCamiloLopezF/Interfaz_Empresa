@@ -23,16 +23,16 @@ public class ClienteCreadoConExito extends Application {
 
         Label clienteCreadoConExitoLabel = new Label("El cliente fue agregado exitosamente");
 
-        Button volver = new Button("<--");
-        volver.setMaxWidth(40);
-
-        volver.setOnAction(event ->{
-            AgregarCliente agregarClienteWindow = new AgregarCliente();
-            agregarClienteWindow.start(clienteCreadoConExitoWindow);
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(clienteCreadoConExitoWindow);
         });
 
-        raiz.setCenter(clienteCreadoConExitoLabel);
         raiz.setTop(volver);
+
+        raiz.setCenter(clienteCreadoConExitoLabel);
 
         Scene scene = new Scene(raiz, 1920, 780);
 

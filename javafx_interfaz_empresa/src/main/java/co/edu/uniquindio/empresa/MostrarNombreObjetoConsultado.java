@@ -2,6 +2,7 @@ package co.edu.uniquindio.empresa;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -21,6 +22,15 @@ public class MostrarNombreObjetoConsultado extends Application {
         Label mostrarObjetoConsultado = new Label("El objeto que buscó es: ");
 
         raiz.setCenter(mostrarObjetoConsultado);
+
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(mostrarNombreObjetoConsultadoWindow);
+        });
+
+        raiz.setTop(volver);
 
         Scene scene = new Scene(raiz, 1920, 780);
 

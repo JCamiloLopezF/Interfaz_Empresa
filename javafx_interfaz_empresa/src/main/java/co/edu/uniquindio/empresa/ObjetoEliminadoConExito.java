@@ -23,16 +23,17 @@ public class ObjetoEliminadoConExito extends Application {
 
         Label objetoEliminadoConExitoLabel = new Label("El objeto fue eliminado exitosamente");
 
-        Button volver = new Button("<--");
-        volver.setMaxWidth(40);
-
-        volver.setOnAction(event ->{
-            EliminarObjeto eliminarObjetoWindow = new EliminarObjeto();
-            eliminarObjetoWindow.start(objetoEliminadoConExitoWindow);
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(objetoEliminadoConExitoWindow);
         });
 
-        raiz.setCenter(objetoEliminadoConExitoLabel);
         raiz.setTop(volver);
+
+        raiz.setCenter(objetoEliminadoConExitoLabel);
+
 
         Scene scene = new Scene(raiz, 1920, 780);
 

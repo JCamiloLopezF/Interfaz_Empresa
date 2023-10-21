@@ -1,6 +1,7 @@
 package co.edu.uniquindio.empresa;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -20,8 +21,16 @@ public class MostrarEmpleadoConsultado extends Application {
 
         Label mostrarEmpleadoConsultado = new Label("El empleado que buscó es: ");// añadir el empleado
         mostrarEmpleadoConsultado.setTranslateY(-200);
+
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(mostrarEmpleadoConsultadoWindow);
+        });
     
         raiz.setCenter(mostrarEmpleadoConsultado);
+        raiz.setTop(volver);
 
         Scene scene = new Scene(raiz, 1920, 780);
 

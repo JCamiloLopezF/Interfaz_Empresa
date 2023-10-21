@@ -39,7 +39,4 @@ public class EmpleadoCreadoConExito extends Application {
         empleadoAgregadoConExitoWindow.show();
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 }

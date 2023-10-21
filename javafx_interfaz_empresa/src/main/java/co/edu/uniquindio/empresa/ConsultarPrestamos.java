@@ -45,7 +45,7 @@ public class ConsultarPrestamos extends Application {
         Button buscar = new Button("Buscar");
         
         buscar.setOnAction(event -> {
-            boolean idPrestamoValido = !etiquetaIdPrestamo.getText().isEmpty();
+            boolean idPrestamoValido = !idPrestamo.getText().isEmpty();
             switch (evaluarCampos(idPrestamoValido)){
                 case "ÉXITO":
                 MostrarPrestamoConsultado mostrarPrestamoWindow = new MostrarPrestamoConsultado();
@@ -53,6 +53,7 @@ public class ConsultarPrestamos extends Application {
                 break;
                 case "ERROR_PRÉSTAMO":
                 mostrarAdvertencia("¡Este campo es obligatorio!", "El campo del Id del préstamo es un campo obligatorio");
+                break;
         }
         });
 
@@ -87,7 +88,7 @@ public class ConsultarPrestamos extends Application {
         if (idPrestamoValido){
             return "ÉXITO";}// Todos los campos llenos
         else if (!idPrestamoValido){
-            return "ERROR_PRÉSTAMO";}//Nombre vacío
+            return "ERROR_PRÉSTAMO";}
 
         return "ERROR ERUJ-43897";//Para cubrir otros tipos de errores no contemplados en los else if
         }

@@ -22,16 +22,16 @@ public class EmpleadoEliminadoConExito extends Application {
         Label etiquetaEmpleadoEliminadoConExito = new Label("El empleado fue eliminado exitosamente");
 
 
-        Button volver = new Button("<--");
-        volver.setMaxWidth(40);
-
-        volver.setOnAction(event ->{
-            EliminarCliente eliminarClienteWindow = new EliminarCliente();
-            eliminarClienteWindow.start(empleadoEliminadoConExitoWindow);
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(empleadoEliminadoConExitoWindow);
         });
 
-        raiz.setCenter(etiquetaEmpleadoEliminadoConExito);
         raiz.setTop(volver);
+        raiz.setCenter(etiquetaEmpleadoEliminadoConExito);
+
 
         Scene scene = new Scene(raiz, 1920, 780);
 

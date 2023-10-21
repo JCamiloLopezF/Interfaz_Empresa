@@ -22,16 +22,17 @@ public class ObjetoCreadoConExito extends Application {
 
         Label objetoAgregadoConExitoLabel = new Label("El objeto fue agregado exitosamente");
 
-        Button volver = new Button("<--");
-        volver.setMaxWidth(40);
-
-        volver.setOnAction(event ->{
-            AgregarObjeto agregarObjetoWindow = new AgregarObjeto();
-            agregarObjetoWindow.start(objetoAgregadoConExitoWindow);
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(objetoAgregadoConExitoWindow);
         });
 
-        raiz.setCenter(objetoAgregadoConExitoLabel);
         raiz.setTop(volver);
+
+        raiz.setCenter(objetoAgregadoConExitoLabel);
+
 
         Scene scene = new Scene(raiz, 1920, 780);
 
@@ -40,7 +41,4 @@ public class ObjetoCreadoConExito extends Application {
         objetoAgregadoConExitoWindow.show();
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 }

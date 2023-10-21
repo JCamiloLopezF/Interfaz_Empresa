@@ -2,6 +2,7 @@ package co.edu.uniquindio.empresa;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -23,6 +24,15 @@ public class MostrarClienteConsultado extends Application{
         mostrarEmpleadoConsultado.setTranslateY(-200);
         
         raiz.setCenter(mostrarEmpleadoConsultado);
+
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(mostrarClienteConsultadoWindow);
+        });
+
+        raiz.setTop(volver);
 
         Scene scene = new Scene(raiz, 1920, 780);
 

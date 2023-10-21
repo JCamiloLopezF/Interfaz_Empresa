@@ -116,9 +116,5 @@ public class AgregarEmpleado extends Application {
         anadirEmpleadoWindow.setTitle("Agregar Empleado");
         anadirEmpleadoWindow.show();
     }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 }
 

@@ -29,19 +29,20 @@ public class PrestamoRealizado extends Application{
         //  muestra un mensaje en la interfaz de usuario cuando un producto ha sido agregado con éxito
         Label prestamoRealizadoLabel = new Label("El préstamo fue aprobado exitosamente, el ID del préstamo es: ");
 
-        Button volver = new Button("<--");
-        volver.setMaxWidth(40);
-
-        volver.setOnAction(event ->{
-            AgregarObjeto agregarProductoWindow = new AgregarObjeto();
-            agregarProductoWindow.start(prestamoRealizadoWindow);
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(prestamoRealizadoWindow);
         });
+
+        raiz.setTop(volver);
 
         // Ubica el contenido de productoCreadoConExitoLabel en el centro del contenedor raiz
         raiz.setCenter(prestamoRealizadoLabel);
 
-        // Ubica el botón "volver" en la parte superior del contenedor raiz
-        raiz.setTop(volver);
+
+ 
 
         Scene scene = new Scene(raiz, 1920, 780);
 

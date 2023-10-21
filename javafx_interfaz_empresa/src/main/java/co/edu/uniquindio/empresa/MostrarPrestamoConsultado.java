@@ -2,6 +2,7 @@ package co.edu.uniquindio.empresa;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -21,6 +22,15 @@ public class MostrarPrestamoConsultado extends Application {
 
         Label mostrarPrestamoConsultado = new Label("El prestamo que buscó es: ");
         mostrarPrestamoConsultado.setTranslateY(-200);
+
+        Button volver = new Button("Salir");
+                
+        volver.setOnAction(event -> {
+            App welcomeUiStage = new App();
+            welcomeUiStage.start(mostrarPrestamoConsultadoWindow);
+        });
+
+        raiz.setTop(volver);
 
         raiz.setCenter(mostrarPrestamoConsultado);
 

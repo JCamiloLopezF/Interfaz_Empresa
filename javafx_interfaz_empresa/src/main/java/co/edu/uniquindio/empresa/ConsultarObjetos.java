@@ -11,7 +11,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -29,23 +28,11 @@ public class ConsultarObjetos extends Application {
         nombreObjeto.setPromptText("Ingrese el nombre del objeto");
         
         Label etiquetaNombreProducto = new Label("Nombre del Objeto");
-        etiquetaNombreProducto.setTranslateY(-200);
-
-        VBox contenedorVBoxNombreProducto = new VBox();
-        contenedorVBoxNombreProducto.getChildren().addAll(nombreObjeto);
-        contenedorVBoxNombreProducto.setTranslateY(200);
+        etiquetaNombreProducto.setTranslateY(-100);
         
-        Button consultarProductoButton = new Button("consultar Producto");
-        consultarProductoButton.setTranslateY(150);
-
-        Button consultarNombreObjeto = new Button("Buscar");
-
-        consultarNombreObjeto.setOnAction(event ->{
-            MostrarNombreObjetoConsultado mostrarObjetoWindow = new MostrarNombreObjetoConsultado();
-            mostrarObjetoWindow.start(consultarObjetosWindow);
-            });
 
         Button buscar = new Button("Buscar");
+        buscar.setTranslateY(50);
 
         buscar.setOnAction(event -> {
             boolean nombreObjetoValido = !nombreObjeto.getText().isEmpty();
