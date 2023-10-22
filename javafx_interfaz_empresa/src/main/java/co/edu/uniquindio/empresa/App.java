@@ -13,6 +13,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+//* Interfaz de usuario JavaFX diseñada para una empresa de préstamos; Autores: Helen Giraldo Libreros, Sara Valentina Acosta Burbano, Diego Flores Quintero, Juan Sebastián Londoño Ramírez, Juan Camilo López Fuentes*/
+
 public class App extends Application {
 
     @Override
